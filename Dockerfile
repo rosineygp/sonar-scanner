@@ -8,3 +8,7 @@ RUN wget -q "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/son
 	unzip "sonar-scanner-cli-${SONAR_VERSION}.zip" -d /usr/share/sonar-scanner && \
 	rm -rf "sonar-scanner-cli-${SONAR_VERSION}.zip" && \
 	ln -sf /usr/share/sonar-scanner/sonar-scanner-${SONAR_VERSION}/bin/sonar-scanner /usr/local/bin/sonar-scanner
+
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+	apt-get install -y nodejs && \
+	rm -rf /var/lib/apt/lists/*
