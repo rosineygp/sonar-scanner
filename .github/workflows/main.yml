@@ -1,0 +1,13 @@
+name: CI
+
+on: [push]
+
+jobs:
+  pipeline:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: hadolint
+      run: make hadolint
